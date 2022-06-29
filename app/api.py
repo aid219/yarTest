@@ -58,4 +58,4 @@ async def send_result(my_info: MyInfo):
       decrypted_list.append(i[0])
    out_data = {"name": name, "repo_url": repo_url, "result": decrypted_list}
    response = requests.post("http://yarlikvid.ru:9999/api/result", data = json.dumps(out_data), auth= auth)
-   return response
+   return
