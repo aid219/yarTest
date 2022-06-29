@@ -1,7 +1,4 @@
-
-from tkinter import SE
 from fastapi import HTTPException, Depends, APIRouter, Request
-from matplotlib.font_manager import json_load
 from app.database import session
 import json
 from app.schemas import MyInfo
