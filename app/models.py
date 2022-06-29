@@ -1,7 +1,7 @@
 
-from sqlalchemy import MetaData, Table, Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
-from app.database import Base
+from app.database import Base, engine
 
 class Secrets(Base):
     __tablename__ = "secrets"
@@ -15,4 +15,7 @@ class Secrets(Base):
         """Constructor"""
         self.encrypted_text = enc_text
         self.created_on = datetime.now()
+
+meta = Base.metadata
+meta.create_all(engine)
 
